@@ -14,7 +14,7 @@ class PengumumanController extends Controller
         return view('pages.admin.pengumuman', compact('pengumuman'));
     }
 
-    public function store(Request $request)
+    public function simpan(Request $request)
     {
         $this->validate($request, [
             'opsi' => 'required',
