@@ -20,7 +20,7 @@ Sistem informasi sekolah berbasis laravel 8 dengan template dashboard
 clone project atau download
 
 ```bash
-  git clone https://github.com/lacsapadnan/Sistem-Informasi-Sekolah.git
+  git clone https://github.com/yusrilap/Sistem-Informasi-Sekolah.git
   cd Sistem-Informasi-Sekolah
   npm install
   composer install / composer update
@@ -31,7 +31,7 @@ Buka `.env` dan atur database anda
 
 ```bash
   DB_PORT=3306
-  DB_DATABASE=laravel
+  DB_DATABASE=db_sie_sekolah
   DB_USERNAME=root
   DB_PASSWORD=
 ```
@@ -54,26 +54,6 @@ Jalankan website
 Admin
 
 ```bash
-  email : admin@mail.com
+  email : admin@gmail.com
   password : admin123
-```
-
-Guru
-
-```bash
-  email : budi@mail.com
-  password : budi123
-
-  email : gunawan@mail.com
-  password : gunawan123
-```
-
-Siswa
-
-```bash
-  email : kevin@mail.com
-  password : kevin123
-
-  email : siska@mail.com
-  password : siska123
 ```
