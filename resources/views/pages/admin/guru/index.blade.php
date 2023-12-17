@@ -11,7 +11,7 @@
                         <div class="card-header d-flex justify-content-between">
                             <h4>List Guru</h4>
                             <button class="btn btn-primary" data-toggle="modal" data-target="#exampleModal"><i
-                                    class="nav-icon fas fa-folder-plus"></i>&nbsp; Tambah Data Guru</button>
+                                    class="nav-icon fas fa-folder-plus"></i>&nbsp; Tambah Data Pembimbing</button>
                         </div>
                         <div class="card-body">
                             @if ($message = Session::get('success'))

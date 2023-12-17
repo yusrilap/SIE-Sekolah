@@ -4,7 +4,7 @@
 @section('content')
     <section class="section">
         <div class="section-header">
-            <h1>Dashboard</h1>
+            <h5>Sistem Informasi Ekstrakulikuler SMK 2 Cilaku Tahun Ajaran 2023/2024</h5>
         </div>
 
         <div class="section-body">
@@ -73,22 +73,6 @@
                         </div>
                     </div>
                 </div>
-
-                <div class="col-md-12">
-                    <div class="card card-warning" style="min-height: 385px;">
-                        <div class="card-header">
-                            <h3 class="card-title">
-                                Pengumuman!!!
-                            </h3>
-                        </div>
-                        <div class="card-body">
-                            <div class="tab-content p-0">
-                                {{ $pengumuman->isi }}
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
             </div>
         </div>
     </section>

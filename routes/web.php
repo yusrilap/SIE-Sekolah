@@ -10,7 +10,6 @@ use App\Http\Controllers\SiswaController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\PengumumanController;
 use App\Models\Ekstrakulikuler;
-use App\Models\Pengumuman;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
@@ -50,7 +49,7 @@ Route::group(['middleware' => ['auth', 'checkRole:admin']], function () {
     Route::resource('siswa', SiswaController::class);
     Route::resource('user', UserController::class);
     Route::resource('jadwal', JadwalController::class);
-    Route::resource('pengumuman', PengumumanController::class);
+    // Route::resource('pengumuman', PengumumanController::class);
     // Route::get('pengumuman', 'PengumumanController@index')->name('admin.pengumuman');
     // Route::post('pengumuman/simpan', 'PengumumanController@simpan')->name('pages.admin.pengumuman.simpan');
 });
