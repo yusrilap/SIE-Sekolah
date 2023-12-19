@@ -21,7 +21,7 @@ clone project atau download
   git clone https://github.com/yusrilap/SIE-Sekolah.git
   cd SIE-Sekolah
   npm install
-  composer composer update
+  composer update
   cp .env.example .env
 ```
 
