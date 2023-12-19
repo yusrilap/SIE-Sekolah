@@ -45,7 +45,6 @@ class SiswaController extends Controller
             'nama' => 'required',
             'nis' => 'required|unique:siswas',
             'telp' => 'required',
-            'alamat' => 'required',
             'kelas_id' => 'required|unique:siswas',
             'foto' => 'required|image|mimes:jpeg,png,jpg|max:2048'
         ], [
@@ -63,7 +62,6 @@ class SiswaController extends Controller
         $siswa->nama = $request->nama;
         $siswa->nis = $request->nis;
         $siswa->telp = $request->telp;
-        $siswa->alamat = $request->alamat;
         $siswa->kelas_id = $request->kelas_id;
         $siswa->foto = $foto;
         $siswa->save();
@@ -121,7 +119,6 @@ class SiswaController extends Controller
         $siswa->nama = $request->nama;
         $siswa->nis = $request->nis;
         $siswa->telp = $request->telp;
-        $siswa->alamat = $request->alamat;
         $siswa->kelas_id = $request->kelas_id;
 
         if ($request->hasFile('foto')) {

@@ -19,7 +19,6 @@ class CreateSiswasTable extends Migration
             $table->string('nis');
             $table->string('nama');
             $table->string('telp');
-            $table->string('alamat');
             $table->string('foto')->nullable();
             $table->bigInteger('kelas_id')->unsigned();
             $table->timestamps();

@@ -34,8 +34,6 @@
                                 <div class="slash"></div> siswa {{ $siswa->kelas->nama_kelas }}
                             </div>
                         </div>
-                        <label for="alamat">Alamat</label>
-                        <p>{{ $siswa->alamat }}</p>
                     </div>
                 </div>
             </div>
