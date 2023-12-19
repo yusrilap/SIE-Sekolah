@@ -18,14 +18,14 @@ Sistem informasi sekolah berbasis laravel 8 dengan template dashboard
 clone project atau download
 
 ```bash
-  git clone https://github.com/yusrilap/Sistem-Informasi-Sekolah.git
-  cd Sistem-Informasi-Sekolah
+  git clone https://github.com/yusrilap/SIE-Sekolah.git
+  cd SIE-Sekolah
   npm install
-  composer install / composer update
+  composer composer update
   cp .env.example .env
 ```
 
-Buka `.env` dan atur database anda
+Buka `.env` dan ganti nama DB_DATABASE
 
 ```bash
   DB_PORT=3306
@@ -34,7 +34,13 @@ Buka `.env` dan atur database anda
   DB_PASSWORD=
 ```
 
-Install website
+Buka localhost dan buat database dengan nama 
+
+```bash
+  db_sie_sekolah
+```
+
+Install website di terminal vscode
 
 ```bash
   php artisan key:generate
