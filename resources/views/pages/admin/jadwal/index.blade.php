@@ -102,10 +102,10 @@
                                                 </div>
                                             @endif
                                             <div class="form-group">
-                                                <label for="ekstrakulikuler_id">Mata Pelajaran</label>
+                                                <label for="ekstrakulikuler_id">Ekstrakulikuler</label>
                                                 <select id="ekstrakulikuler_id" name="ekstrakulikuler_id"
                                                     class="select2 form-control ">
-                                                    <option value="">-- Pilih Mata Pelajaran --</option>
+                                                    <option value="">-- Pilih Ekstrakulikuler --</option>
                                                     @foreach ($ekstrakulikuler as $data)
                                                         <option value="{{ $data->id }}">
                                                             {{ $data->nama_ekstrakulikuler }}
