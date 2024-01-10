@@ -12,6 +12,7 @@ use App\Http\Controllers\PengumumanController;
 use App\Models\Ekstrakulikuler;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\ScheduleController;
 
 /*
 |--------------------------------------------------------------------------
@@ -49,6 +50,7 @@ Route::group(['middleware' => ['auth', 'checkRole:admin']], function () {
     Route::resource('siswa', SiswaController::class);
     Route::resource('user', UserController::class);
     Route::resource('jadwal', JadwalController::class);
+    Route::resource('schedule', ScheduleController::class);
     // Route::resource('pengumuman', PengumumanController::class);
     // Route::get('pengumuman', 'PengumumanController@index')->name('admin.pengumuman');
     // Route::post('pengumuman/simpan', 'PengumumanController@simpan')->name('pages.admin.pengumuman.simpan');

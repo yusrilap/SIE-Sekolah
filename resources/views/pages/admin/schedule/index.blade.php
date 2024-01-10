@@ -13,9 +13,9 @@
                 <div class="col-12">
                     <div class="card">
                         <div class="card-header d-flex justify-content-between">
-                            <h4>List Informasi</h4>
+                            <h4>Jadwal Ektrakulikuler</h4>
                             <button class="btn btn-primary" data-toggle="modal" data-target="#exampleModal"><i
-                                    class="nav-icon fas fa-folder-plus"></i>&nbsp; Tambah Informasi</button>
+                                    class="nav-icon fas fa-folder-plus"></i>&nbsp; Tambah Jadwal Ektrakulikuler</button>
                         </div>
                         <div class="card-body">
                             @if ($message = Session::get('success'))
@@ -41,8 +41,8 @@
                                             <th>Aksi</th>
                                         </tr>
                                     </thead>
-                                    <tbody>
-                                        @foreach ($jadwal as $result => $data)
+                                    {{-- <tbody>
+                                        @foreach ($schedule as $result => $data)
                                             <tr>
                                                 <td>{{ $loop->iteration }}</td>
                                                 <td>{{ $data->ekstrakulikuler->nama_ekstrakulikuler }}</td>
@@ -52,7 +52,7 @@
                                                 <td>{{ $data->sampai_jam }}</td>
                                                 <td>
                                                     <div class="d-flex">
-                                                        <a href="{{ route('jadwal.edit', $data->id) }}"
+                                                        <a href="{{ route('schedule.edit', $data->id) }}"
                                                             class="btn btn-success btn-sm"><i
                                                                 class="nav-icon fas fa-edit"></i> &nbsp; Edit</a>
                                                         <form method="POST"
@@ -69,7 +69,7 @@
                                                 </td>
                                             </tr>
                                         @endforeach
-                                    </tbody>
+                                    </tbody> --}}
                                 </table>
                             </div>
                         </div>
@@ -79,12 +79,12 @@
                     <div class="modal-dialog" role="document">
                         <div class="modal-content">
                             <div class="modal-header">
-                                <h5 class="modal-title">Tambah Informasi</h5>
+                                <h5 class="modal-title">Tambah Jadwal</h5>
                                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                     <span aria-hidden="true">&times;</span>
                                 </button>
                             </div>
-                            <div class="modal-body">
+                            {{-- <div class="modal-body">
                                 <form action="{{ route('jadwal.store') }}" method="POST">
                                     @csrf
                                     <div class="row">
@@ -150,7 +150,7 @@
                                         <button type="submit" class="btn btn-primary">Simpan</button>
                                     </div>
                                 </form>
-                            </div>
+                            </div> --}}
                         </div>
                     </div>
                 </div>
@@ -159,7 +159,7 @@
     </section>
 @endsection
 
-@push('script')
+{{-- @push('script')
     <script
         src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.17.37/js/bootstrap-datetimepicker.min.js">
     </script>
@@ -195,4 +195,4 @@
             format: 'HH:mm:ss'
         });
     </script>
-@endpush
+@endpush --}}

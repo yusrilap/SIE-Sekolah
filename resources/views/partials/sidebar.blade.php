@@ -31,7 +31,11 @@
                         href="{{ route('siswa.index') }}"><i class="fas fa-users"></i> <span>Siswa</span></a></li>
 
                 <li class="{{ request()->routeIs('jadwal.*') ? 'active' : '' }}"><a class="nav-link"
-                        href="{{ route('jadwal.index') }}"><i class="fas fa-calendar"></i> <span>Jadwal</span></a></li>
+                        href="{{ route('jadwal.index') }}"><i class="fas fa-calendar"></i> <span>Informasi</span></a>
+                </li>
+                <li class="{{ request()->routeIs('schedule.*') ? 'active' : '' }}"><a class="nav-link"
+                        href="{{ route('schedule.index') }}"><i class="fas fa-calendar"></i> <span>Schedule</span></a>
+                </li>
 
                 <li class="{{ request()->routeIs('user.*') ? 'active' : '' }}"><a class="nav-link"
                         href="{{ route('user.index') }}"><i class="fas fa-user"></i> <span>User</span></a></li>
