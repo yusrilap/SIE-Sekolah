@@ -31,10 +31,10 @@
                         href="{{ route('siswa.index') }}"><i class="fas fa-users"></i> <span>Siswa</span></a></li>
 
                 <li class="{{ request()->routeIs('jadwal.*') ? 'active' : '' }}"><a class="nav-link"
-                        href="{{ route('jadwal.index') }}"><i class="fas fa-calendar"></i> <span>Informasi</span></a>
+                        href="{{ route('jadwal.index') }}"><i class="fas fa-calendar"></i> <span>Jadwal</span></a>
                 </li>
-                <li class="{{ request()->routeIs('schedule.*') ? 'active' : '' }}"><a class="nav-link"
-                        href="{{ route('schedule.index') }}"><i class="fas fa-calendar"></i> <span>Schedule</span></a>
+                <li class="{{ request()->routeIs('kehadiran.*') ? 'active' : '' }}"><a class="nav-link"
+                        href="{{ route('kehadiran.index') }}"><i class="fas fa-calendar"></i> <span>Kehadiran</span></a>
                 </li>
 
                 <li class="{{ request()->routeIs('user.*') ? 'active' : '' }}"><a class="nav-link"

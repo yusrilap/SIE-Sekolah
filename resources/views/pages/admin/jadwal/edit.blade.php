@@ -34,48 +34,50 @@
                             <form method="POST" action="{{ route('jadwal.update', $jadwal->id) }}">
                                 @csrf
                                 @method('PUT')
-                                <div class="form-group">
-                                    <label for="ekstrakulikuler_id">Ekstrakulikuler</label>
-                                    <select id="ekstrakulikuler_id" name="ekstrakulikuler_id" class="select2 form-control ">
-                                        @foreach ($ekstrakulikuler as $data)
-                                            <option value="{{ $data->id ?? '' }}">{{ $data->nama_ekstrakulikuler ?? '' }}
-                                            </option>
-                                        @endforeach
-                                    </select>
-                                </div>
-                                <div class="form-group">
-                                    <label for="kelas_id">Kelas</label>
-                                    <select id="kelas_id" name="kelas_id" class="select2 form-control ">
-                                        @foreach ($kelas as $data)
-                                            <option value="{{ $data->id ?? '' }}">{{ $data->nama_kelas ?? '' }}</option>
-                                        @endforeach
-                                    </select>
-                                </div>
+                                <div class="row">
+                                    <div class="form-group col-md-12">
+                                        <label for="ekstrakulikuler_id">Ekstrakulikuler</label>
+                                        <select id="ekstrakulikuler_id" name="ekstrakulikuler_id" class="select2 form-control ">
+                                            @foreach ($ekstrakulikuler as $data)
+                                                <option value="{{ $data->id ?? '' }}">{{ $data->nama_ekstrakulikuler ?? '' }}
+                                                </option>
+                                            @endforeach
+                                        </select>
+                                    </div>
+                                    <div class="form-group col-md-12">
+                                        <label for="kelas_id">Kelas</label>
+                                        <select id="kelas_id" name="kelas_id" class="select2 form-control ">
+                                            @foreach ($kelas as $data)
+                                                <option value="{{ $data->id ?? '' }}">{{ $data->nama_kelas ?? '' }}</option>
+                                            @endforeach
+                                        </select>
+                                    </div>
 
-                                <div class="form-group">
-                                    <label for="hari">Hari</label>
-                                    <select id="hari" name="hari" class="select2 form-control ">
-                                        @foreach ($hari as $item)
-                                            <option value="{{ $item }}"
-                                                {{ $jadwal->hari == $item ? 'selected' : '' }}>{{ Str::ucfirst($item) }}
-                                            </option>
-                                        @endforeach
+                                    <div class="form-group col-md-12">
+                                        <label for="hari">Hari</label>
+                                        <select id="hari" name="hari" class="select2 form-control ">
+                                            @foreach ($hari as $item)
+                                                <option value="{{ $item }}"
+                                                    {{ $jadwal->hari == $item ? 'selected' : '' }}>{{ Str::ucfirst($item) }}
+                                                </option>
+                                            @endforeach
 
-                                    </select>
-                                </div>
-                                <div class="form-group">
-                                    <label for="dari_jam">Mulai dari jam</label>
-                                    <input class="form-control" type="text" name="dari_jam" id="time1"
-                                        @error('dari_jam') is-invalid @enderror"
-                                        placeholder="{{ __('Jam mulai pelajaran') }}"
-                                        value="{{ $jadwal->dari_jam ?? '' }}" />
+                                        </select>
+                                    </div>
+                                    <div class="form-group col-md-6">
+                                        <label for="dari_jam">Mulai dari jam</label>
+                                        <input class="form-control" type="time" name="dari_jam" id="time1"
+                                            @error('dari_jam') is-invalid @enderror"
+                                            placeholder="{{ __('Jam mulai pelajaran') }}"
+                                            value="{{ $jadwal->dari_jam ?? '' }}" />
 
-                                </div>
-                                <div class="form-group">
-                                    <label for="sampai_jam">Sampai dari jam</label>
-                                    <input class="form-control" type="text" name="sampai_jam" id="time2"
-                                        @error('sampai_jam') is-invalid @enderror" placeholder="{{ __('Nama Jurusan') }}"
-                                        value="{{ $jadwal->sampai_jam ?? '' }}" />
+                                    </div>
+                                    <div class="form-group col-md-6">
+                                        <label for="sampai_jam">Sampai dari jam</label>
+                                        <input class="form-control" type="time" name="sampai_jam" id="time2"
+                                            @error('sampai_jam') is-invalid @enderror" placeholder="{{ __('Nama Jurusan') }}"
+                                            value="{{ $jadwal->sampai_jam ?? '' }}" />
+                                    </div>
                                 </div>
 
                                 <button type="submit" class="btn btn-primary"><i class="nav-icon fas fa-save"></i> &nbsp;

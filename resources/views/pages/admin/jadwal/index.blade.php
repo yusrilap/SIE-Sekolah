@@ -127,11 +127,11 @@
                                                 <label for="hari">Hari</label>
                                                 <select id="hari" name="hari" class="select2 form-control ">
                                                     <option value="">-- Pilih Hari --</option>
-                                                    <option value="senin">Senin</option>
-                                                    <option value="selasa">Selasa</option>
-                                                    <option value="rabu">Rabu</option>
-                                                    <option value="kamis">Kamis</option>
-                                                    <option value="jumat">Jumat</option>
+                                                    <option value="Senin">Senin</option>
+                                                    <option value="Selasa">Selasa</option>
+                                                    <option value="Rabu">Rabu</option>
+                                                    <option value="Kamis">Kamis</option>
+                                                    <option value="Jumat">Jumat</option>
                                                 </select>
                                             </div>
                                             <div class="form-group">
