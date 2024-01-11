@@ -24,13 +24,14 @@
                                 </div>
                                 <div class="form-group">
                                     <label for="jurusan">Jurusan</label>
-                                    <select id="jurusan" name="jurusan"
-                                        class="select2bs4 form-control @error('jurusan') is-invalid @enderror">
+                                    <select id="jurusan" name="jurusan_id"
+                                        class="select2bs4 form-control @error('jurusan_id') is-invalid @enderror">
                                         <option value="">-- Pilih Jurusan --</option>
-                                        <option value="IPA" @if ($ekstrakulikuler->jurusan == 'IPA') selected @endif>IPA
-                                        </option>
-                                        <option value="IPS" @if ($ekstrakulikuler->jurusan == 'IPS') selected @endif>IPS
-                                        </option>
+                                        @foreach($jurusan as $produk)
+                                            <option value="{{ $produk->id }}" @if ($ekstrakulikuler->jurusan_id == $produk->id) selected @endif>
+                                                {{ $produk->nama_jurusan }}
+                                            </option>
+                                        @endforeach
                                     </select>
                                 </div>
                                 <div class="card-footer">

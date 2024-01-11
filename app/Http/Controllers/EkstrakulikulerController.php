@@ -16,6 +16,7 @@ class EkstrakulikulerController extends Controller
      */
     public function index()
     {
+        $jurusan = Jurusan::all();
         $jurusan = Jurusan::OrderBy('nama_jurusan', 'asc')->get();
         $ekstrakulikuler = Ekstrakulikuler::OrderBy('nama_ekstrakulikuler', 'asc')->get();
 
@@ -49,7 +50,8 @@ class EkstrakulikulerController extends Controller
 
         Ekstrakulikuler::updateOrCreate(
             [
-                'id' => $request->ekstrakulikuler_id
+                'id' => $request->ekstrakulikuler_id,
+                'id' => $request->jurusan_id
             ],
             [
                 'nama_ekstrakulikuler' => $request->nama_ekstrakulikuler,
@@ -81,8 +83,10 @@ class EkstrakulikulerController extends Controller
     {
         $id = Crypt::decrypt($id);
         $ekstrakulikuler = Ekstrakulikuler::findOrFail($id);
+        //$jurusan = Jurusan::findOrFail($id);
+        $jurusan = Jurusan::all();
 
-        return view('pages.admin.ekstrakulikuler.edit', compact('ekstrakulikuler'));
+        return view('pages.admin.ekstrakulikuler.edit', ['jurusan' => $jurusan, 'ekstrakulikuler' => $ekstrakulikuler]);
     }
 
     /**
@@ -94,9 +98,13 @@ class EkstrakulikulerController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $data = $request->all();
-        $ekstrakulikuler = Ekstrakulikuler::findOrFail($id);
-        $ekstrakulikuler->update($data);
+
+        $ekstrakulikuler = Ekstrakulikuler::find($id);
+        $ekstrakulikuler->nama_ekstrakulikuler = $request->get('nama_ekstrakulikuler');
+        $ekstrakulikuler->jurusan_id = $request->get('jurusan_id');
+
+        $ekstrakulikuler->save();
+
 
         return redirect()->route('ekstrakulikuler.index')->with('success', 'Data ekstrakulikuler berhasil diperbarui!');
     }

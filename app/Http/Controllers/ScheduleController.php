@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Schedule;
+use App\Models\Attendance;
 use App\Models\Siswa;
 use App\Models\Keterangan;
 
@@ -12,7 +13,8 @@ class ScheduleController extends Controller
     public function index()
     {
 
-        return view('pages.admin.schedule.index');
+        $kehadiran = Attendance::all();
+        return view('pages.admin.schedule.index', compact('kehadiran'));
 
         // $data['schedule'] = Schedule::all();
         // $data['count'] = Schedule::count();
