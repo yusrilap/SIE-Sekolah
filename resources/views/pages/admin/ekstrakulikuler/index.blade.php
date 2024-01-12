@@ -1,5 +1,5 @@
 @extends('layouts.main')
-@section('title', 'List Mapel')
+@section('title', 'List Ekstrakulikuler')
 
 @section('content')
     <section class="section custom-section">
@@ -29,7 +29,6 @@
                                         <tr>
                                             <th>No</th>
                                             <th>Ekstrakulikuler</th>
-                                            <th>Jurusan</th>
                                             <th>Aksi</th>
                                         </tr>
                                     </thead>
@@ -38,7 +37,6 @@
                                             <tr>
                                                 <td>{{ $loop->iteration }}</td>
                                                 <td>{{ $data->nama_ekstrakulikuler }}</td>
-                                                <td>{{ $data->jurusan->nama_jurusan }}</td>
                                                 <td>
                                                     <div class="d-flex">
                                                         <a href="{{ route('ekstrakulikuler.edit', Crypt::encrypt($data->id)) }}"
@@ -96,7 +94,7 @@
                                                     class="form-control @error('nama_ekstrakulikuler') is-invalid @enderror"
                                                     placeholder="{{ __('Nama Ekstrakulikuler') }}">
                                             </div>
-                                            <div class="form-group">
+                                            {{-- <div class="form-group">
                                                 <label for="jurusan_id">Jurusan</label>
                                                 <select id="jurusan_id" name="jurusan_id"
                                                     class="select2 form-control @error('jurusan_id') is-invalid @enderror">
@@ -106,7 +104,7 @@
                                                         </option>
                                                     @endforeach
                                                 </select>
-                                            </div>
+                                            </div> --}}
                                         </div>
                                     </div>
                                     <div class="modal-footer br">

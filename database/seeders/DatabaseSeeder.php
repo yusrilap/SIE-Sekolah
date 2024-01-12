@@ -13,7 +13,6 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        $this->call(JurusanSeeder::class);
         $this->call(EkstrakulikulerSeeder::class);
         $this->call(GuruSeeder::class);
         $this->call(KelasSeeder::class);

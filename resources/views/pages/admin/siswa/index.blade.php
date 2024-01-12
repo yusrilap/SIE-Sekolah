@@ -31,6 +31,7 @@
                                             <th>Nama Siswa</th>
                                             <th>NIS</th>
                                             <th>Kelas</th>
+                                            <th>Eksrakulikuler</th>
                                             <th>Aksi</th>
                                         </tr>
                                     </thead>
@@ -41,6 +42,7 @@
                                                 <td>{{ $data->nama }}</td>
                                                 <td>{{ $data->nis }}</td>
                                                 <td>{{ $data->kelas->nama_kelas }}</td>
+                                                <td>{{ $data->ekstrakulikuler->nama_ekstrakulikuler }}</td>
                                                 <td>
                                                     <div class="d-flex">
                                                         <a href="{{ route('siswa.show', Crypt::encrypt($data->id)) }}"
@@ -122,6 +124,18 @@
                                                     <option value="">-- Pilih kelas --</option>
                                                     @foreach ($kelas as $data)
                                                         <option value="{{ $data->id }}">{{ $data->nama_kelas }}
+                                                        </option>
+                                                    @endforeach
+                                                </select>
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="ekstrakulikuler_id">Ekstrakulikuler</label>
+                                                <select id="ekstrakulikuler_id" name="ekstrakulikuler_id"
+                                                    class="select2 form-control @error('ekstrakulikuler_id') is-invalid @enderror">
+                                                    <option value="">-- Pilih Ekstrakulikuler --</option>
+                                                    @foreach ($ekstrakulikuler as $data)
+                                                        <option value="{{ $data->id }}">
+                                                            {{ $data->nama_ekstrakulikuler }}
                                                         </option>
                                                     @endforeach
                                                 </select>

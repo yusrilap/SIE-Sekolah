@@ -13,9 +13,6 @@
                 </li>
                 <li class="menu-header">Master Data</li>
 
-                <li class="{{ request()->routeIs('jurusan.*') ? 'active' : '' }}"><a class="nav-link"
-                        href="{{ route('jurusan.index') }}"><i class="fas fa-book"></i> <span>Jurusan</span></a></li>
-
                 <li class="{{ request()->routeIs('ekstrakulikuler.*') ? 'active' : '' }}"><a class="nav-link"
                         href="{{ route('ekstrakulikuler.index') }}"><i class="fas fa-users"></i>
                         <span>Ekstrakulikuler</span></a>
@@ -34,7 +31,8 @@
                         href="{{ route('jadwal.index') }}"><i class="fas fa-calendar"></i> <span>Jadwal</span></a>
                 </li>
                 <li class="{{ request()->routeIs('kehadiran.*') ? 'active' : '' }}"><a class="nav-link"
-                        href="{{ route('kehadiran.index') }}"><i class="fas fa-calendar"></i> <span>Kehadiran</span></a>
+                        href="{{ route('kehadiran.index') }}"><i class="fas fa-calendar"></i>
+                        <span>Kehadiran</span></a>
                 </li>
 
                 <li class="{{ request()->routeIs('user.*') ? 'active' : '' }}"><a class="nav-link"

@@ -1,5 +1,5 @@
 @extends('layouts.main')
-@section('title', 'Edit Mapel')
+@section('title', 'Edit Ektrakulikuler')
 
 @section('content')
     <section class="section">
@@ -22,7 +22,7 @@
                                         placeholder="{{ __('Nama Ekstrakulikuler') }}"
                                         value="{{ $ekstrakulikuler->nama_ekstrakulikuler }}">
                                 </div>
-                                <div class="form-group">
+                                {{-- <div class="form-group">
                                     <label for="jurusan">Jurusan</label>
                                     <select id="jurusan" name="jurusan_id"
                                         class="select2bs4 form-control @error('jurusan_id') is-invalid @enderror">
@@ -34,7 +34,7 @@
                                             </option>
                                         @endforeach
                                     </select>
-                                </div>
+                                </div> --}}
                                 <div class="card-footer">
                                     <button type="submit" class="btn btn-primary"><i class="nav-icon fas fa-save"></i>
                                         &nbsp; Simpan Perubahan</button>

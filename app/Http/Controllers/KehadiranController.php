@@ -23,7 +23,7 @@ class KehadiranController extends Controller
     public function absen($id)
     {
         $jadwal = Jadwal::find($id);
-        $siswa = Siswa::where('kelas_id', $jadwal->kelas_id)->get();
+        $siswa = Siswa::where('ekstrakulikuler_id', $jadwal->ekstrakulikuler_id)->get();
         // dd($siswa);
 
         return view('pages.admin.kehadiran.absen', compact('jadwal', 'siswa'));

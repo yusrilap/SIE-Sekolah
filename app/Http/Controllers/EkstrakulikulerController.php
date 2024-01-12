@@ -16,11 +16,11 @@ class EkstrakulikulerController extends Controller
      */
     public function index()
     {
-        $jurusan = Jurusan::all();
-        $jurusan = Jurusan::OrderBy('nama_jurusan', 'asc')->get();
+        // $jurusan = Jurusan::all();
+        // $jurusan = Jurusan::OrderBy('nama_jurusan', 'asc')->get();
         $ekstrakulikuler = Ekstrakulikuler::OrderBy('nama_ekstrakulikuler', 'asc')->get();
 
-        return view('pages.admin.ekstrakulikuler.index', compact('ekstrakulikuler', 'jurusan'));
+        return view('pages.admin.ekstrakulikuler.index', compact('ekstrakulikuler'));
     }
 
     /**
@@ -43,7 +43,7 @@ class EkstrakulikulerController extends Controller
     {
         $this->validate($request, [
             'nama_ekstrakulikuler' => 'required|unique:ekstrakulikulers',
-            'jurusan_id' => 'required'
+            //'jurusan_id' => 'required'
         ], [
             'nama_ekstrakulikuler.unique' => 'Nama Ekstrakulikuler sudah ada',
         ]);
@@ -51,11 +51,11 @@ class EkstrakulikulerController extends Controller
         Ekstrakulikuler::updateOrCreate(
             [
                 'id' => $request->ekstrakulikuler_id,
-                'id' => $request->jurusan_id
+                //'id' => $request->jurusan_id
             ],
             [
                 'nama_ekstrakulikuler' => $request->nama_ekstrakulikuler,
-                'jurusan_id' => $request->jurusan_id,
+                //'jurusan_id' => $request->jurusan_id,
             ]
         );
 
@@ -84,9 +84,9 @@ class EkstrakulikulerController extends Controller
         $id = Crypt::decrypt($id);
         $ekstrakulikuler = Ekstrakulikuler::findOrFail($id);
         //$jurusan = Jurusan::findOrFail($id);
-        $jurusan = Jurusan::all();
+        //$jurusan = Jurusan::all();
 
-        return view('pages.admin.ekstrakulikuler.edit', ['jurusan' => $jurusan, 'ekstrakulikuler' => $ekstrakulikuler]);
+        return view('pages.admin.ekstrakulikuler.edit', ['ekstrakulikuler' => $ekstrakulikuler]);
     }
 
     /**
@@ -101,7 +101,7 @@ class EkstrakulikulerController extends Controller
 
         $ekstrakulikuler = Ekstrakulikuler::find($id);
         $ekstrakulikuler->nama_ekstrakulikuler = $request->get('nama_ekstrakulikuler');
-        $ekstrakulikuler->jurusan_id = $request->get('jurusan_id');
+       // $ekstrakulikuler->jurusan_id = $request->get('jurusan_id');
 
         $ekstrakulikuler->save();
 

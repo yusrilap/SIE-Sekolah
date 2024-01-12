@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Kelas;
 use App\Models\Siswa;
+use App\Models\Ekstrakulikuler;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Crypt;
 use Illuminate\Support\Facades\File;
@@ -19,7 +20,8 @@ class SiswaController extends Controller
     {
         $siswa = Siswa::OrderBy('nama', 'asc')->get();
         $kelas = Kelas::all();
-        return view('pages.admin.siswa.index', compact('siswa', 'kelas'));
+        $ekstrakulikuler = Ekstrakulikuler::all();
+        return view('pages.admin.siswa.index', compact('siswa', 'kelas', 'ekstrakulikuler'));
     }
 
     /**
@@ -46,6 +48,7 @@ class SiswaController extends Controller
             'nis' => 'required|unique:siswas',
             'telp' => 'required',
             'kelas_id' => 'required|unique:siswas',
+            'ekstrakulikuler_id' => 'required',
             'foto' => 'required|image|mimes:jpeg,png,jpg|max:2048'
         ], [
             'nis.unique' => 'NIS sudah terdaftar',
@@ -63,6 +66,7 @@ class SiswaController extends Controller
         $siswa->nis = $request->nis;
         $siswa->telp = $request->telp;
         $siswa->kelas_id = $request->kelas_id;
+        $siswa->ekstrakulikuler_id = $request->ekstrakulikuler_id;
         $siswa->foto = $foto;
         $siswa->save();
 
@@ -95,8 +99,9 @@ class SiswaController extends Controller
         $id = Crypt::decrypt($id);
         $kelas = Kelas::all();
         $siswa = Siswa::findOrFail($id);
+        $ekstrakulikuler = Ekstrakulikuler::all();
 
-        return view('pages.admin.siswa.edit', compact('siswa', 'kelas'));
+        return view('pages.admin.siswa.edit', compact('siswa', 'kelas', 'ekstrakulikuler'));
     }
 
     /**
@@ -120,6 +125,7 @@ class SiswaController extends Controller
         $siswa->nis = $request->nis;
         $siswa->telp = $request->telp;
         $siswa->kelas_id = $request->kelas_id;
+        $siswa->ekstrakulikuler_id = $request->ekstrakulikuler_id;
 
         if ($request->hasFile('foto')) {
             $lokasi = 'img/siswa/' . $siswa->foto;

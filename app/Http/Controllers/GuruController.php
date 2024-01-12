@@ -66,8 +66,9 @@ class GuruController extends Controller
         $guru->no_telp = $request->no_telp;
         $guru->alamat = $request->alamat;
         $guru->foto = $foto;
-        $guru->save();
 
+        //dd($guru);
+        $guru->save();
 
         return redirect()->route('guru.index')->with('success', 'Data guru berhasil ditambahkan');
     }

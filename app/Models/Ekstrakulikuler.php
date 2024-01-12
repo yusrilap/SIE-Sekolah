@@ -9,10 +9,10 @@ class Ekstrakulikuler extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['nama_ekstrakulikuler', 'jurusan_id'];
+    protected $fillable = ['nama_ekstrakulikuler'];
 
-    public function jurusan()
-    {
-        return $this->belongsTo(Jurusan::class);
-    }
+    // public function jurusan()
+    // {
+    //     return $this->belongsTo(Jurusan::class);
+    // }
 }

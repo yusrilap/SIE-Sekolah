@@ -16,11 +16,9 @@ class CreateEkstrakulikulersTable extends Migration
         Schema::create('ekstrakulikulers', function (Blueprint $table) {
             $table->id();
             $table->string('nama_ekstrakulikuler');
-            $table->bigInteger('jurusan_id')->unsigned();
             $table->timestamps();
 
             // Relation table
-            $table->foreign('jurusan_id')->references('id')->on('jurusans')->onDelete('cascade');
         });
     }
 

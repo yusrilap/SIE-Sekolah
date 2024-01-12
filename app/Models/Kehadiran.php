@@ -16,8 +16,8 @@ class Kehadiran extends Model
         return $this->belongsTo(Ekstrakulikuler::class);
     }
 
-    public function jurusan()
+    public function kelas()
     {
-        return $this->belongsTo(Jurusan::class);
+        return $this->belongsTo(Kelas::class);
     }
 }
