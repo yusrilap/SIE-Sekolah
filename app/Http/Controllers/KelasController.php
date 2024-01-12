@@ -87,11 +87,11 @@ class KelasController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $this->validate($request, [
-            'guru_id' => 'required|unique:kelas'
-        ], [
-            'guru_id.unique' => 'Guru sudah memiliki kelas'
-        ]);
+        // $this->validate($request, [
+        //     'guru_id' => 'required|unique:kelas'
+        // ], [
+        //     'guru_id.unique' => 'Guru sudah memiliki kelas'
+        // ]);
 
         $data = $request->all();
         $kelas = Kelas::findOrFail($id);

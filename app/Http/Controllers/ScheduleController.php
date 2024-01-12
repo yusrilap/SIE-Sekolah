@@ -34,7 +34,7 @@ class ScheduleController extends Controller
     public function store(Request $request)
     {   
         $request->validate([
-            'staff_id'=>'required|unique:tb_schedule',
+            'user_id'=>'required|unique:tb_schedule',
             'tgl_masuk'=>'required|date',
             'ket_schedule'=>'required',
             // 'status'=>'required',

@@ -15,11 +15,27 @@ class JurusanSeeder extends Seeder
     public function run()
     {
         DB::table('jurusans')->insert([
-            'nama_jurusan' => 'IPA',
+            'nama_jurusan' => 'APHP',
         ]);
 
         DB::table('jurusans')->insert([
-            'nama_jurusan' => 'IPS',
+            'nama_jurusan' => 'ATPH',
+        ]);
+
+        DB::table('jurusans')->insert([
+            'nama_jurusan' => 'ATU',
+        ]);
+
+        DB::table('jurusans')->insert([
+            'nama_jurusan' => 'TKJ',
+        ]);
+
+        DB::table('jurusans')->insert([
+            'nama_jurusan' => 'APL',
+        ]);
+
+        DB::table('jurusans')->insert([
+            'nama_jurusan' => 'GRAFIKA',
         ]);
     }
 }

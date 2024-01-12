@@ -45,9 +45,9 @@ class GuruController extends Controller
         $this->validate($request, [
             'nama' => 'required',
             'nip' => 'required|unique:gurus',
+            'ekstrakulikuler_id' => 'required',
             'no_telp' => 'required',
             'alamat' => 'required',
-            'ekstrakulikuler_id' => 'required',
             'foto' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048'
         ], [
             'nip.unique' => 'NIP sudah terdaftar',
@@ -62,9 +62,9 @@ class GuruController extends Controller
         $guru = new Guru;
         $guru->nama = $request->nama;
         $guru->nip = $request->nip;
+        $guru->ekstrakulikuler_id = $request->ekstrakulikuler_id;
         $guru->no_telp = $request->no_telp;
         $guru->alamat = $request->alamat;
-        $guru->ekstrakulikuler_id = $request->mapel_id;
         $guru->foto = $foto;
         $guru->save();
 
@@ -95,10 +95,10 @@ class GuruController extends Controller
     public function edit($id)
     {
         $id = Crypt::decrypt($id);
-        $ekstrakulikuler = Ekstrakulikuler::all();
         $guru = Guru::findOrFail($id);
+        $ekstrakulikuler = Ekstrakulikuler::all();
 
-        return view('pages.admin.guru.edit', compact('guru', 'mapel'));
+        return view('pages.admin.guru.edit', compact('guru', 'ekstrakulikuler'));
     }
 
     /**
@@ -110,11 +110,11 @@ class GuruController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $this->validate($request, [
-            'nip' => 'required|unique:gurus'
-        ], [
-            'nip.unique' => 'NIP sudah terdaftar',
-        ]);
+        // $this->validate($request, [
+        //     'nip' => 'required|unique:gurus'
+        // ], [
+        //     'nip.unique' => 'NIP sudah terdaftar',
+        // ]);
 
         $guru = Guru::find($id);
         $guru->nama = $request->input('nama');

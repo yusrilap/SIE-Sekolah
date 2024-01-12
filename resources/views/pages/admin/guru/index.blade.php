@@ -31,7 +31,7 @@
                                             <th>No</th>
                                             <th>Nama Guru</th>
                                             <th>NIP</th>
-                                            <th>Mata Pelajaran</th>
+                                            <th>Pembimbing</th>
                                             <th>Aksi</th>
                                         </tr>
                                     </thead>
@@ -41,8 +41,7 @@
                                                 <td>{{ $loop->iteration }}</td>
                                                 <td>{{ $data->nama }}</td>
                                                 <td>{{ $data->nip }}</td>
-                                                <td>{{ $data->ekstrakulikuler->nama_ekstrakulikuler }} |
-                                                    {{ $data->ekstrakulikuler->jurusan->nama_jurusan }}</td>
+                                                <td>{{ $data->ekstrakulikuler->nama_ekstrakulikuler }}
                                                 <td>
                                                     <div class="d-flex">
                                                         <a href="{{ route('guru.show', Crypt::encrypt($data->id)) }}"

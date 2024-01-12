@@ -16,7 +16,7 @@
                                 @csrf
                                 @method('PUT')
                                 <div class="form-group">
-                                    <label for="nama_mapel">Nama Mapel</label>
+                                    <label for="nama_mapel">Nama Ekstrakulikuler</label>
                                     <input type="text" id="nama_ekstrakulikuler" name="nama_ekstrakulikuler"
                                         class="form-control @error('nama_ekstrakulikuler') is-invalid @enderror"
                                         placeholder="{{ __('Nama Ekstrakulikuler') }}"
@@ -27,8 +27,9 @@
                                     <select id="jurusan" name="jurusan_id"
                                         class="select2bs4 form-control @error('jurusan_id') is-invalid @enderror">
                                         <option value="">-- Pilih Jurusan --</option>
-                                        @foreach($jurusan as $produk)
-                                            <option value="{{ $produk->id }}" @if ($ekstrakulikuler->jurusan_id == $produk->id) selected @endif>
+                                        @foreach ($jurusan as $produk)
+                                            <option value="{{ $produk->id }}"
+                                                @if ($ekstrakulikuler->jurusan_id == $produk->id) selected @endif>
                                                 {{ $produk->nama_jurusan }}
                                             </option>
                                         @endforeach
