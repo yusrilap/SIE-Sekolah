@@ -44,9 +44,9 @@
                                                 <td>{{ $data->ekstrakulikuler->nama_ekstrakulikuler }}
                                                 <td>
                                                     <div class="d-flex">
-                                                        <a href="{{ route('guru.show', Crypt::encrypt($data->id)) }}"
+                                                        {{-- <a href="{{ route('guru.show', Crypt::encrypt($data->id)) }}"
                                                             class="btn btn-primary btn-sm" style="margin-right: 8px"><i
-                                                                class="nav-icon fas fa-user"></i> &nbsp; Profile</a>
+                                                                class="nav-icon fas fa-user"></i> &nbsp; Profile</a> --}}
                                                         <a href="{{ route('guru.edit', Crypt::encrypt($data->id)) }}"
                                                             class="btn btn-success btn-sm"><i
                                                                 class="nav-icon fas fa-edit"></i> &nbsp; Edit</a>

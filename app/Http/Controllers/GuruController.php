@@ -42,33 +42,33 @@ class GuruController extends Controller
     public function store(Request $request)
     {
 
+        $data = $request->all();
+
         $this->validate($request, [
             'nama' => 'required',
             'nip' => 'required|unique:gurus',
             'ekstrakulikuler_id' => 'required',
             'no_telp' => 'required',
             'alamat' => 'required',
-            'foto' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048'
+            //'foto' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048'
         ], [
             'nip.unique' => 'NIP sudah terdaftar',
         ]);
 
-        if(isset($request->foto)){
-            $file = $request->file('foto');
-            $namaFoto = time() . '.' . $file->getClientOriginalExtension();
-            $foto = $file->storeAs('images/guru', $namaFoto, 'public');
-        }
+        // if(isset($request->foto)){
+        //     $file = $request->file('foto');
+        //     $namaFoto = time() . '.' . $file->getClientOriginalExtension();
+        //     $foto = $file->storeAs('images/guru', $namaFoto, 'public');
+        // }
 
-        $guru = new Guru;
-        $guru->nama = $request->nama;
-        $guru->nip = $request->nip;
-        $guru->ekstrakulikuler_id = $request->ekstrakulikuler_id;
-        $guru->no_telp = $request->no_telp;
-        $guru->alamat = $request->alamat;
-        $guru->foto = $foto;
-
-        //dd($guru);
-        $guru->save();
+        Guru::create([
+            'nama' => $data['nama'],
+            'nip' => $data['nip'],
+            'ekstrakulikuler_id' => $data['ekstrakulikuler_id'],
+            'no_telp' => $data['no_telp'],
+            'alamat' => $data['alamat'],
+            //'foto' => $data['foto'],
+        ]);
 
         return redirect()->route('guru.index')->with('success', 'Data guru berhasil ditambahkan');
     }
